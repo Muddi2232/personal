@@ -1,0 +1,87 @@
+
+body{
+    background-color: rgb(209, 209, 221);
+}
+/*==========Header And Nav================*/
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: var(--z-fixed);
+}
+
+.nav{
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav--logo{
+    color: var(--tittle-color);
+    font-weight: var(--font-bold);
+}
+
+.nav-toggle
+.nav-close{
+    font-size: 1.5rem;
+    color: var(--tittle-color);
+    cursor: pointer;
+}
+
+/*======== Navigation for Mobile devices ============*/
+@media screen and (max-width:1150px){
+    .nav_menu{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: hsla(var(--hue), 70%, 4%, .2);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        width: 80%;
+        height: 100%;
+        padding: 7rem 3rem;
+        transition: right .4s;
+    }
+}
+
+.nav-list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+
+.nav-link{
+    position: relative;
+    columns: var(--tittle-color);
+    font-weight: var(--font-semi-bold);
+    transition: color .4s
+}
+
+.nav-link::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: var(--first-color-light);
+    position: absolute;
+    left: 0;
+    bottom: -5rem;
+    transition: width .3s;
+}
+
+.nav-link:hover{
+    color: var(--first-color-light);
+}
+
+.nav-link:hover::after{
+    width: 30%;
+}
+
+.nav-close{
+    position: absolute;
+    top: 1rem;
+    right: 1.5rcap;
+}
